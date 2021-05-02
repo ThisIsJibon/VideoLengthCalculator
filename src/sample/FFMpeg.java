@@ -1,6 +1,7 @@
 package sample;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +62,12 @@ public class FFMpeg {
 
     public static double  doIT(String[] args){
 
-        FFMpeg ffmpeg=new FFMpeg("E:\\Source_Code\\JavaWorld\\VideoLengthCalculator\\src\\sample\\ffmpeg.exe");
+        String ffmpegpath = new File("src/sample/ffmpeg.exe")
+                .getAbsolutePath();
+        //System.out.println("filepath is "+ffmpegpath);
+
+
+        FFMpeg ffmpeg=new FFMpeg(ffmpegpath);
         try {
             String curString=args[0];
             ffmpeg.getLen(curString);
