@@ -1,24 +1,15 @@
-package sample;
+package vlc;
 
 import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.URLConnection;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Map;
 
 
-
-
-public class Controller {
+public class MainPageController {
     public AnchorPane mainAnchorPane;
     public static int videoCnt=0;
     public static double totalSecCnt=0;
@@ -30,6 +21,7 @@ public class Controller {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         Stage primaryStage=(Stage) mainAnchorPane.getScene().getWindow();
         File selectedDirectory = directoryChooser.showDialog(primaryStage);
+        System.out.println("this might take a few moments");
         doVideoCalculation(selectedDirectory);
         System.out.println("total videos "+videoCnt);
         System.out.println("total time in secs "+totalSecCnt);

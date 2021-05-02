@@ -1,4 +1,4 @@
-package sample;
+package vlc;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class FFMpeg {
 
     public static double  doIT(String[] args){
 
-        String ffmpegpath = new File("src/sample/ffmpeg.exe")
+        String ffmpegpath = new File("src/vlc/ffmpeg.exe")
                 .getAbsolutePath();
 
         FFMpeg ffmpeg=new FFMpeg(ffmpegpath);
