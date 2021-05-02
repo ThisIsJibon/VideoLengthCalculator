@@ -15,27 +15,26 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 
-import com.coremedia.iso.IsoFile;
 
 
 
 public class Controller {
     public AnchorPane mainAnchorPane;
     public static int videoCnt=0;
-    public static double totalSec=0;
+    public static double totalSecCnt=0;
+
 
     public void selectDirectoryButtonAction(ActionEvent actionEvent) throws IOException, InterruptedException {
 
-        discord=0;
+        totalSecCnt=0;
         DirectoryChooser directoryChooser = new DirectoryChooser();
         Stage primaryStage=(Stage) mainAnchorPane.getScene().getWindow();
         File selectedDirectory = directoryChooser.showDialog(primaryStage);
         doVideoCalculation(selectedDirectory);
-        System.out.println("total vids "+videoCnt);
-        System.out.println("total time "+discord);
-       // Main.codeforces=discord;
+        System.out.println("total videos "+videoCnt);
+        System.out.println("total time in secs "+totalSecCnt);
     }
-    public static double discord=0;
+
 
     public void doVideoCalculation(File path) throws InterruptedException, IOException {
         File files[]= path.listFiles();
@@ -48,7 +47,7 @@ public class Controller {
             if(isVideoFile(curFile.toString())){
                 videoCnt++;
                 String[] arr={curFile.toString()};
-                discord+= FFMpeg.doIT(arr);
+                totalSecCnt+= FFMpeg.doIT(arr);
             }
         }
     }
@@ -56,7 +55,7 @@ public class Controller {
 
     public boolean isVideoFile(String path) {
         //System.out.println(path);
-        String[] extensions={"mp4","mkv","avi","3gp","m4p"};
+        String[] extensions={"mp4","mkv","avi","3gp","m4p","webm","gif","gifv",".amv","m4v"};
         for (String x: extensions){
             if(path.endsWith(x))
                 return true;

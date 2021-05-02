@@ -1,8 +1,6 @@
 package sample;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,25 +8,23 @@ import java.util.regex.Pattern;
 
 public class FFMpeg {
 
-    public static double timeCnt=0;
 
     public String FFMpegEXE;
 
     public FFMpeg(String FFMpegEXE) {
 
-        super(); codechef=0;
+        super(); overallTimeCnt =0;
         this.FFMpegEXE =FFMpegEXE;
     }
-    static double codechef=0;
-    public double getLen(String videoInputPath) throws Exception{
+    static double overallTimeCnt =0;
+
+    public double getVideoLength(String videoInputPath) throws Exception{
 
         List<String> command=new ArrayList<>();
-        //ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 fifa.mp4
+
         command.add(FFMpegEXE);
         command.add("-i");
         command.add(videoInputPath);
-
-
 
         ProcessBuilder processBuilder=new ProcessBuilder(command);
         Process p=processBuilder.start();
@@ -37,7 +33,6 @@ public class FFMpeg {
             public void run() {
 
                 Scanner sc = new Scanner(p.getErrorStream());
-                // Find duration
                 Pattern durPattern = Pattern.compile("(?<=Duration: )[^,]*");
                 String dur = sc.findWithinHorizon(durPattern, 0);
                 if (dur == null)
@@ -47,36 +42,29 @@ public class FFMpeg {
                         + Integer.parseInt(hms[1]) *   60
                         + Double.parseDouble(hms[2]);
 
-                //System.out.println("Total duration: " + totalSecs + " seconds.");
-
-                codechef+=totalSecs;
+                overallTimeCnt +=totalSecs;
             }
         }; t.start();
         t.join();
-       // System.out.println("debug cc"+codechef);
-        return timeCnt;
+        return 0;
 
     }
-    public static double tempcnt;
-
 
     public static double  doIT(String[] args){
 
         String ffmpegpath = new File("src/sample/ffmpeg.exe")
                 .getAbsolutePath();
-        //System.out.println("filepath is "+ffmpegpath);
-
 
         FFMpeg ffmpeg=new FFMpeg(ffmpegpath);
         try {
-            String curString=args[0];
-            ffmpeg.getLen(curString);
-          //  System.out.println("final deb "+tempcnt);
+
+            String curFilePathString=args[0];
+            ffmpeg.getVideoLength(curFilePathString);
+
         } catch (Exception e){
             e.printStackTrace();
         }
-      //  System.out.println("int doit "+ ffmpeg.codechef);
-        return ffmpeg.codechef;
+        return ffmpeg.overallTimeCnt;
     }
 
 }
