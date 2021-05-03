@@ -28,13 +28,13 @@
             <Button fx:id="selectDirectoryButton" contentDisplay="TOP" graphicTextGap="10.0" onAction="#selectDirectoryButtonAction" prefHeight="44.0" prefWidth="179.0" styleClass="root" stylesheets="@style.css" text="Select Directory" />
             <HBox fx:id="videoCntHbox" alignment="CENTER" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Label text="Number of Videos : " />
+                  <Label text="Number of Videos :-" />
                   <Label fx:id="videoCntLabel" layoutX="10.0" layoutY="10.0" prefHeight="27.0" text="calculating..." />
                </children>
             </HBox>
             <HBox fx:id="durationHBox" alignment="CENTER" layoutX="10.0" layoutY="380.0" prefWidth="200.0" spacing="20.0" styleClass="label">
                <children>
-                  <Label text="Total duration : " />
+                  <Label text="Total duration :-" />
                   <Label fx:id="videoDurationLabel" layoutX="10.0" layoutY="10.0" prefHeight="27.0" text="give me time :(" />
                </children>
             </HBox>

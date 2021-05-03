@@ -42,13 +42,12 @@ public class MainPageController extends Application implements Initializable {
     public void selectDirectoryButtonAction(ActionEvent actionEvent) throws IOException, InterruptedException {
 
         totalSecCnt=0;
+        modifyUI();
 
         DirectoryChooser directoryChooser = new DirectoryChooser();
         Stage primaryStage=(Stage) mainAnchorPane.getScene().getWindow();
         File selectedDirectory = directoryChooser.showDialog(primaryStage);
         primaryStage.setTitle("please wait a while!");
-
-        modifyUI();
 
         try {
             doVideoCalculation(selectedDirectory);
@@ -58,6 +57,7 @@ public class MainPageController extends Application implements Initializable {
         } finally{
 
             primaryStage.setTitle("VideoLengthCalculator - VLC");
+
             String s=Integer.toString(videoCnt);
             videoCntLabel.setText(s);
             s=Double.toString(totalSecCnt);
