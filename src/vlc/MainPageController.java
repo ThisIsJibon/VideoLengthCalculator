@@ -1,6 +1,9 @@
 package vlc;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
@@ -13,18 +16,29 @@ public class MainPageController {
     public AnchorPane mainAnchorPane;
     public static int videoCnt=0;
     public static double totalSecCnt=0;
+    public CheckBox isSubDirIncluded;
 
 
     public void selectDirectoryButtonAction(ActionEvent actionEvent) throws IOException, InterruptedException {
 
         totalSecCnt=0;
+
         DirectoryChooser directoryChooser = new DirectoryChooser();
         Stage primaryStage=(Stage) mainAnchorPane.getScene().getWindow();
         File selectedDirectory = directoryChooser.showDialog(primaryStage);
         System.out.println("this might take a few moments");
-        doVideoCalculation(selectedDirectory);
-        System.out.println("total videos "+videoCnt);
-        System.out.println("total time in secs "+totalSecCnt);
+        try {
+            doVideoCalculation(selectedDirectory);
+        } catch (Exception e){
+           // e.printStackTrace();
+            
+        } finally{
+            System.out.println("total videos "+videoCnt);
+            System.out.println("total time in secs "+totalSecCnt);
+        }
+
+
+
     }
 
 

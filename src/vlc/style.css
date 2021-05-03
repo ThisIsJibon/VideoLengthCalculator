@@ -1,9 +1,22 @@
+* {
+    -fx-primary-color: #ff7675;
+    -fx-secondary-color: #6A1B4D;
+
+}
+
 .root{
-    -fx-background-color: #ff7675;
-    -fx-font-size: 15;
-    -fx-font-family: consolas;
+
+    -fx-background-color: -fx-secondary-color;
+    -fx-font-family: Segoe UI Light;
+    -fx-text-fill:#FFF;
+
+
 }
 .button{
-    -fx-font-size: 12;
-    -fx-font-family: consolas;
+    -fx-font-size: 18;
+    -fx-font-family: Segoe UI;
+    -fx-background-color:none;
+    -fx-border-color: #FFF;
+    -fx-border-radius : 10px;
+
 }

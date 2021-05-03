@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+//import static vlc.MainPageController.isSubDirIncluded;
+
 public class Main extends Application {
 
 
@@ -14,7 +16,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         primaryStage.setTitle("VideoLengthCalculator - VLC");
-        primaryStage.setScene(new Scene(root, 2*400, 2*300));
+        primaryStage.setScene(new Scene(root, 600, 450));
+
         primaryStage.show();
     }
 
@@ -22,4 +25,5 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
 }
