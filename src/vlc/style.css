@@ -23,5 +23,6 @@
     -fx-background-color:none;
     -fx-border-color: #FFF;
     -fx-border-radius : 10px;
+    -fx-text-fill :#FFF;
 
 }

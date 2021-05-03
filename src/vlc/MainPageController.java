@@ -1,5 +1,6 @@
 package vlc;
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,7 +24,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class MainPageController implements Initializable {
+public class MainPageController extends Application implements Initializable {
     public AnchorPane mainAnchorPane;
     public static int videoCnt=0;
     public static double totalSecCnt=0;
@@ -35,6 +36,7 @@ public class MainPageController implements Initializable {
     public Button selectDirectoryButton;
     public Label videoDurationLabel;
     public Label videoCntLabel;
+    public Button goBackButton;
 
 
     public void selectDirectoryButtonAction(ActionEvent actionEvent) throws IOException, InterruptedException {
@@ -49,7 +51,6 @@ public class MainPageController implements Initializable {
         modifyUI();
 
         try {
-            //modifyUI();
             doVideoCalculation(selectedDirectory);
         } catch (Exception e){
             e.printStackTrace();
@@ -95,11 +96,9 @@ public class MainPageController implements Initializable {
 
     public void modifyUI() throws IOException{
 
-
         videoCntHbox.setVisible(true);
         durationHBox.setVisible(true);
-
-
+        goBackButton.setVisible(true);
 
         mainPageVBox.getChildren().remove(0,3);
     }
@@ -137,6 +136,23 @@ public class MainPageController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         videoCntHbox.setVisible(false);
         durationHBox.setVisible(false);
+        goBackButton.setVisible(false);
+
+    }
+
+    public void goBackButtonAction(ActionEvent actionEvent) throws IOException {
+        Stage curStage=(Stage) mainAnchorPane.getScene().getWindow();
+        curStage.close();
+        Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+        Stage primaryStage=new Stage();
+        primaryStage.setTitle("VideoLengthCalculator - VLC");
+        primaryStage.setScene(new Scene(root, 600, 450));
+
+        primaryStage.show();
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
 
     }
 }

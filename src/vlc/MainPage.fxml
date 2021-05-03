@@ -11,18 +11,15 @@
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vlc.MainPageController">
    <children>
-      <VBox fx:id="mainPageVBox" alignment="CENTER" spacing="25.0" styleClass="root" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="mainPageVBox" alignment="CENTER" spacing="20.0" styleClass="root" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="helloLabel" contentDisplay="CENTER" prefHeight="30.0" styleClass="root" stylesheets="@style.css" text="Hello! select a directory ">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font>
                <VBox.margin>
-                  <Insets />
+                  <Insets top="85.0" />
                </VBox.margin>
-               <padding>
-                  <Insets top="35.0" />
-               </padding>
             </Label>
             <CheckBox fx:id="isSubDirIncluded" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="178.0" selected="true" styleClass="root" stylesheets="@style.css" text="include subdirectories">
                <font>
@@ -41,6 +38,7 @@
                   <Label fx:id="videoDurationLabel" layoutX="10.0" layoutY="10.0" prefHeight="27.0" text="give me time :(" />
                </children>
             </HBox>
+            <Button fx:id="goBackButton" mnemonicParsing="false" onAction="#goBackButtonAction" text="Back" />
          </children>
       </VBox>
    </children>
