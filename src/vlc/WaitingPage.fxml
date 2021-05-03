@@ -5,13 +5,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vlc.WaitingPageController">
+<AnchorPane fx:id="waitingPageAnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vlc.WaitingPageController">
    <children>
-      <VBox alignment="CENTER" layoutX="61.0" layoutY="69.0" prefHeight="200.0" prefWidth="100.0" spacing="25.0" styleClass="root" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="waitingPageVBox" alignment="CENTER" layoutX="61.0" layoutY="69.0" prefHeight="200.0" prefWidth="100.0" spacing="25.0" styleClass="root" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label styleClass="root" stylesheets="@style.css" text="This might take a few moment!" />
-            <ProgressBar fx:id="waitingProgressBar"   prefWidth="200.0" progress="-1.0" styleClass="root" stylesheets="@style.css" />
+            <Label fx:id="waitingPageLabel" styleClass="root" stylesheets="@style.css" text="This might take a few moment!" />
+            <ProgressBar fx:id="waitingProgressBar" prefWidth="200.0" progress="-1.0" styleClass="root" stylesheets="@style.css" />
          </children>
       </VBox>
    </children>

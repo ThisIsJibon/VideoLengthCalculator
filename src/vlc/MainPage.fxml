@@ -5,29 +5,42 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vlc.MainPageController">
    <children>
-      <VBox alignment="TOP_CENTER" spacing="25.0" styleClass="root" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="mainPageVBox" alignment="CENTER" spacing="25.0" styleClass="root" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label contentDisplay="CENTER" prefHeight="30.0" styleClass="root" stylesheets="@style.css" text="Hello! select a directory ">
+            <Label fx:id="helloLabel" contentDisplay="CENTER" prefHeight="30.0" styleClass="root" stylesheets="@style.css" text="Hello! select a directory ">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
                <padding>
                   <Insets top="50.0" />
                </padding>
-               <VBox.margin>
-                  <Insets top="80.0" />
-               </VBox.margin>
             </Label>
             <CheckBox fx:id="isSubDirIncluded" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="178.0" selected="true" styleClass="root" stylesheets="@style.css" text="include subdirectories">
                <font>
                   <Font name="Segoe UI Light" size="14.0" />
                </font></CheckBox>
-            <Button fx:id="selectDirectoryButton" contentDisplay="TOP" graphicTextGap="10.0" onAction="#selectDirectoryButtonAction" prefHeight="56.0" prefWidth="179.0" styleClass="root" stylesheets="@style.css" text="Select Directory" />
+            <Button fx:id="selectDirectoryButton" contentDisplay="TOP" graphicTextGap="10.0" onAction="#selectDirectoryButtonAction" prefHeight="44.0" prefWidth="179.0" styleClass="root" stylesheets="@style.css" text="Select Directory" />
+            <HBox fx:id="videoCntHbox" alignment="CENTER" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Number of Videos : " />
+                  <Label fx:id="videoCntLabel" layoutX="10.0" layoutY="10.0" prefHeight="27.0" text="calculating..." />
+               </children>
+            </HBox>
+            <HBox fx:id="durationHBox" alignment="CENTER" layoutX="10.0" layoutY="380.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Total duration : " />
+                  <Label fx:id="videoDurationLabel" layoutX="10.0" layoutY="10.0" prefHeight="27.0" text="give me time :(" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>
