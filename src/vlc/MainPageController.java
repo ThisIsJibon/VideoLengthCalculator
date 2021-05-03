@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -37,6 +38,8 @@ public class MainPageController extends Application implements Initializable {
     public Label videoDurationLabel;
     public Label videoCntLabel;
     public Button goBackButton;
+    public ImageView backImageView;
+    public ImageView directoryImageView;
 
 
     public void selectDirectoryButtonAction(ActionEvent actionEvent) throws IOException, InterruptedException {
@@ -96,6 +99,8 @@ public class MainPageController extends Application implements Initializable {
 
     public void modifyUI() throws IOException{
 
+        mainPageVBox.getChildren().addAll(videoCntHbox,durationHBox,goBackButton);
+
         videoCntHbox.setVisible(true);
         durationHBox.setVisible(true);
         goBackButton.setVisible(true);
@@ -137,6 +142,11 @@ public class MainPageController extends Application implements Initializable {
         videoCntHbox.setVisible(false);
         durationHBox.setVisible(false);
         goBackButton.setVisible(false);
+        File iconFile=new File("src/res/icon/folderIcon.png");
+        directoryImageView.setImage(new Image(iconFile.toURI().toString()));
+        iconFile=new File("src/res/icon/backIcon.png");
+        backImageView.setImage(new Image(iconFile.toURI().toString()));
+        mainPageVBox.getChildren().remove(3,6);
 
     }
 
