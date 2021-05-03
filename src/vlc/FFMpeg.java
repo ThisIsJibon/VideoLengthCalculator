@@ -52,7 +52,7 @@ public class FFMpeg {
 
     public static double  doIT(String[] args){
 
-        String ffmpegpath = new File("src/vlc/ffmpeg.exe")
+        String ffmpegpath = new File("src/res/exe/ffmpeg.exe")
                 .getAbsolutePath();
 
         FFMpeg ffmpeg=new FFMpeg(ffmpegpath);

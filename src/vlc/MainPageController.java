@@ -73,15 +73,15 @@ public class MainPageController extends Application implements Initializable {
 
             if(!hourVal.equals("0")){
                 formattedString+=hourVal;
-                formattedString+=" hour : ";
+                formattedString+=" hours : ";
             }
             if(!minVal.equals("0")){
                 formattedString+=minVal;
-                formattedString+=" minute : ";
+                formattedString+=" minutes : ";
             }
             if(!secVal.equals("0")){
                 formattedString+=secVal;
-                formattedString+=" second : ";
+                formattedString+=" seconds : ";
             }
             int len=formattedString.length();
             if(formattedString.endsWith(" ")) formattedString=formattedString.substring(0,len-2);
