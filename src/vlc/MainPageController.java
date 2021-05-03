@@ -29,7 +29,6 @@ public class MainPageController implements Initializable {
     public static double totalSecCnt=0;
     public CheckBox isSubDirIncluded;
     public VBox mainPageVBox;
-    public ProgressBar mainProgressBar;
     public HBox videoCntHbox;
     public HBox durationHBox;
     public Label helloLabel;
@@ -124,7 +123,7 @@ public class MainPageController implements Initializable {
 
 
     public boolean isVideoFile(String path) {
-        //System.out.println(path);
+
         String[] extensions={".mp4",".mkv",".avi",".3gp",".m4p",".webm",".gif",".gifv",".amv",".m4v"};
         for (String x: extensions){
             if(path.endsWith(x))
