@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vlc.MainPageController">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vlc.controller.MainPageController">
    <children>
-      <VBox fx:id="mainPageVBox" alignment="CENTER" spacing="20.0" styleClass="root" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="mainPageVBox" alignment="CENTER" spacing="20.0" styleClass="root" stylesheets="@../../res/css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="helloLabel" contentDisplay="CENTER" prefHeight="30.0" styleClass="root" stylesheets="@style.css" text="Hello! select a directory ">
+            <Label fx:id="helloLabel" contentDisplay="CENTER" prefHeight="30.0" styleClass="root" stylesheets="@../../res/css/style.css" text="Hello! select a directory ">
                <font>
                   <Font name="Segoe UI" size="20.0" />
                </font>
@@ -22,11 +22,11 @@
                   <Insets />
                </VBox.margin>
             </Label>
-            <CheckBox fx:id="isSubDirIncluded" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="178.0" selected="true" styleClass="root" stylesheets="@style.css" text="include subdirectories">
+            <CheckBox fx:id="isSubDirIncluded" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="178.0" selected="true" styleClass="root" stylesheets="@../../res/css/style.css" text="include subdirectories">
                <font>
                   <Font name="Segoe UI Light" size="14.0" />
                </font></CheckBox>
-            <Button fx:id="selectDirectoryButton" graphicTextGap="10.0" onAction="#selectDirectoryButtonAction" prefHeight="44.0" styleClass="root" stylesheets="@style.css" text="Select Directory">
+            <Button fx:id="selectDirectoryButton" graphicTextGap="10.0" onAction="#selectDirectoryButtonAction" prefHeight="44.0" styleClass="root" stylesheets="@../../res/css/style.css" text="Select Directory">
                <graphic>
                   <ImageView fx:id="directoryImageView" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>

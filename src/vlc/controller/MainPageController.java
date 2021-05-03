@@ -1,16 +1,14 @@
-package vlc;
+package vlc.controller;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -18,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+import vlc.FFMpeg;
 
 import java.io.File;
 import java.io.IOException;
@@ -152,12 +151,15 @@ public class MainPageController extends Application implements Initializable {
 
     public void goBackButtonAction(ActionEvent actionEvent) throws IOException {
         Stage curStage=(Stage) mainAnchorPane.getScene().getWindow();
+        videoCntLabel.setText("0");
+        videoCnt=0;
+        totalSecCnt=0;
         curStage.close();
-        Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/MainPage.fxml"));
         Stage primaryStage=new Stage();
         primaryStage.setTitle("VideoLengthCalculator - VLC");
         primaryStage.setScene(new Scene(root, 600, 450));
-
+        
         primaryStage.show();
     }
 

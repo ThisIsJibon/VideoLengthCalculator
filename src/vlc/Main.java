@@ -13,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/MainPage.fxml"));
         primaryStage.setTitle("VideoLengthCalculator - VLC");
         primaryStage.setScene(new Scene(root, 600, 450));
 
