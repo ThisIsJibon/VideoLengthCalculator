@@ -23,7 +23,7 @@
                   <Insets top="80.0" />
                </VBox.margin>
             </Label>
-            <CheckBox fx:id="isSubDirIncluded" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="178.0" styleClass="root" stylesheets="@style.css" text="include subdirectories">
+            <CheckBox fx:id="isSubDirIncluded" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="178.0" selected="true" styleClass="root" stylesheets="@style.css" text="include subdirectories">
                <font>
                   <Font name="Segoe UI Light" size="14.0" />
                </font></CheckBox>

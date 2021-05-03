@@ -1,6 +1,9 @@
 package vlc;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -26,12 +29,14 @@ public class MainPageController {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         Stage primaryStage=(Stage) mainAnchorPane.getScene().getWindow();
         File selectedDirectory = directoryChooser.showDialog(primaryStage);
-        System.out.println("this might take a few moments");
+        Parent waitingRoot= FXMLLoader.load(getClass().getResource("WaitingPage.fxml"));
+       // WaitingPageController.progressBarInitialize();
+        primaryStage.setScene(new Scene(waitingRoot));
         try {
             doVideoCalculation(selectedDirectory);
         } catch (Exception e){
            // e.printStackTrace();
-            
+
         } finally{
             System.out.println("total videos "+videoCnt);
             System.out.println("total time in secs "+totalSecCnt);
@@ -47,7 +52,7 @@ public class MainPageController {
 
         for(int i=0;i<files.length;i++){
             File curFile=files[i];
-            if(curFile.isDirectory()==true){
+            if(curFile.isDirectory()==true && isSubDirIncluded.isSelected()){
                 doVideoCalculation(curFile);
             }
             if(isVideoFile(curFile.toString())){

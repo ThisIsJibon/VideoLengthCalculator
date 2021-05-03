@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-//import static vlc.MainPageController.isSubDirIncluded;
 
 public class Main extends Application {
 
