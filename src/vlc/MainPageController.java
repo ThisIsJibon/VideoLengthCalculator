@@ -45,6 +45,7 @@ public class MainPageController implements Initializable {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         Stage primaryStage=(Stage) mainAnchorPane.getScene().getWindow();
         File selectedDirectory = directoryChooser.showDialog(primaryStage);
+        primaryStage.setTitle("please wait a while!");
 
         modifyUI();
 
@@ -56,8 +57,7 @@ public class MainPageController implements Initializable {
 
         } finally{
 
-            System.out.println("total videos "+videoCnt);
-            System.out.println("total time in secs "+totalSecCnt);
+            primaryStage.setTitle("VideoLengthCalculator - VLC");
             String s=Integer.toString(videoCnt);
             videoCntLabel.setText(s);
             s=Double.toString(totalSecCnt);
@@ -73,7 +73,7 @@ public class MainPageController implements Initializable {
 
             if(!hourVal.equals("0")){
                 formattedString+=hourVal;
-                formattedString+="hour : ";
+                formattedString+=" hour : ";
             }
             if(!minVal.equals("0")){
                 formattedString+=minVal;
@@ -85,7 +85,6 @@ public class MainPageController implements Initializable {
             }
             int len=formattedString.length();
             if(formattedString.endsWith(" ")) formattedString=formattedString.substring(0,len-2);
-            System.out.println(formattedString+"@");
             videoDurationLabel.setText(formattedString);
 
             if(videoCnt==0){
@@ -126,7 +125,7 @@ public class MainPageController implements Initializable {
 
     public boolean isVideoFile(String path) {
         //System.out.println(path);
-        String[] extensions={"mp4","mkv","avi","3gp","m4p","webm","gif","gifv",".amv","m4v"};
+        String[] extensions={".mp4",".mkv",".avi",".3gp",".m4p",".webm",".gif",".gifv",".amv",".m4v"};
         for (String x: extensions){
             if(path.endsWith(x))
                 return true;
