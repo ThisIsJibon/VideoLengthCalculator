@@ -54,8 +54,7 @@ public class MainPageController extends Application implements Initializable {
         try {
             doVideoCalculation(selectedDirectory);
         } catch (Exception e){
-            e.printStackTrace();
-
+           // e.printStackTrace();
         } finally{
 
             primaryStage.setTitle("VideoLengthCalculator - VLC");
@@ -159,7 +158,7 @@ public class MainPageController extends Application implements Initializable {
         Stage primaryStage=new Stage();
         primaryStage.setTitle("VideoLengthCalculator - VLC");
         primaryStage.setScene(new Scene(root, 600, 450));
-        
+
         primaryStage.show();
     }
 
