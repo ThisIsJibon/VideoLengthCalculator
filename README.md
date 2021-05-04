@@ -7,7 +7,7 @@ Basic Java application to calculate total duration of all video files inside a d
 **Used** :  
 <br/>
   i  . Java JDK build 1.8 <br/>
-  ii . FFmpeg libray  <br/>
+  ii . FFmpeg library  <br/>
   <br/>
 **Quick Tour**
 
