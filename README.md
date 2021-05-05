@@ -4,11 +4,12 @@
 Basic Java application to calculate total duration of all video files inside a directory and it's subdirectories.  <br/> <br/> 
 
 
-**Used** :  
+**Dependencies** :  
 <br/>
   i  . Java JDK build 1.8 <br/>
   ii . FFmpeg library  <br/>
   <br/>
+  
 **Quick Tour**
 
 <br/>
