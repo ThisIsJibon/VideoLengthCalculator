@@ -1,7 +1,7 @@
 # VideoLengthCalculator
 <br/>
 
-Basic Java application to calculate total duration of all video files inside a directory and it's subdirectories.  <br/> <br/> 
+Basic Java application to calculate the total duration of all video files inside a directory and its subdirectories.  <br/> <br/> 
 
 
 **Dependencies** :  
