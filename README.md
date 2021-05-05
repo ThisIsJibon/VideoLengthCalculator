@@ -1,13 +1,12 @@
 # VideoLengthCalculator
 <br/>
 
-Basic Java application to calculate the total duration of all video files inside a directory and its subdirectories.  <br/> <br/> 
+Basic JavaFX application to calculate the total duration of all video files inside a directory and its subdirectories.  <br/> <br/> 
 
 
-**Dependencies** :  
-<br/>
-  i  . Java JDK build 1.8 <br/>
-  ii . FFmpeg library  <br/>
+**Dependencies** :-
+  *  Java JDK build 1.8 <br/>
+  *  FFmpeg library  <br/>
   <br/>
   
 **Quick Tour**
