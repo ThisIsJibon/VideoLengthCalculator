@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vlc.controller.MainPageController">
+   <children>
+      <VBox fx:id="mainPageVBox" alignment="CENTER" spacing="20.0" styleClass="root" stylesheets="@../../res/css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="helloLabel" contentDisplay="CENTER" prefHeight="30.0" styleClass="root" stylesheets="@../../res/css/style.css" text="Hello! select a directory ">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <CheckBox fx:id="isSubDirIncluded" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="178.0" selected="true" styleClass="root" stylesheets="@../../res/css/style.css" text="include subdirectories">
+               <font>
+                  <Font name="Segoe UI Light" size="14.0" />
+               </font></CheckBox>
+            <Button fx:id="selectDirectoryButton" graphicTextGap="10.0" onAction="#selectDirectoryButtonAction" prefHeight="44.0" styleClass="root" stylesheets="@../../res/css/style.css" text="Select Directory">
+               <graphic>
+                  <ImageView fx:id="directoryImageView" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <HBox fx:id="videoCntHbox" alignment="CENTER" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Label text="Number of Videos :-" />
+                  <Label fx:id="videoCntLabel" layoutX="10.0" layoutY="10.0" prefHeight="27.0" text="calculating..." />
+               </children>
+            </HBox>
+            <HBox fx:id="durationHBox" alignment="CENTER" layoutX="10.0" layoutY="380.0" prefWidth="200.0" spacing="20.0" styleClass="label">
+               <children>
+                  <Label text="Total duration :-" />
+                  <Label fx:id="videoDurationLabel" layoutX="10.0" layoutY="10.0" prefHeight="27.0" text="give me time :(" />
+               </children>
+            </HBox>
+            <Button fx:id="goBackButton" graphicTextGap="10.0" mnemonicParsing="false" onAction="#goBackButtonAction" text="Back">
+               <graphic>
+                  <ImageView fx:id="backImageView" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

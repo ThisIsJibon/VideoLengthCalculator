@@ -1,0 +1,28 @@
+* {
+    -fx-primary-color: #ff7675;
+    -fx-secondary-color: #6A1B4D;
+
+}
+
+.root{
+
+    -fx-background-color: -fx-secondary-color;
+    -fx-font-family: Segoe UI Light;
+    -fx-text-fill:#FFF;
+
+
+}
+.label{
+    -fx-font-family: Consolas;
+    -fx-text-fill:#FFF;
+    -fx-font-size: 18;
+}
+.button{
+    -fx-font-size: 18;
+    -fx-font-family: Segoe UI;
+    -fx-background-color:none;
+    -fx-border-color: #FFF;
+    -fx-border-radius : 10px;
+    -fx-text-fill :#FFF;
+
+}

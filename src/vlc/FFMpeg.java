@@ -38,9 +38,17 @@ public class FFMpeg {
                 if (dur == null)
                     throw new RuntimeException("Could not parse duration.");
                 String[] hms = dur.split(":");
-                double totalSecs = Integer.parseInt(hms[0]) * 3600
-                        + Integer.parseInt(hms[1]) *   60
-                        + Double.parseDouble(hms[2]);
+                double a1=0,a2=0,a3=0;
+                try{
+                        a1=Double.parseDouble(hms[0]);
+                        a2=Double.parseDouble(hms[1]);
+                        a3=Double.parseDouble(hms[2]);
+                } catch (NumberFormatException e){
+                         System.out.println("NumberFormatException occur");
+                }
+                double totalSecs = a1 * 3600
+                        + a2 *   60
+                        + a3;
 
                 overallTimeCnt +=totalSecs;
             }
