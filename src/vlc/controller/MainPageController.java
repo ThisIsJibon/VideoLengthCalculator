@@ -126,7 +126,9 @@ public class MainPageController extends Application implements Initializable {
 
     public boolean isVideoFile(String path) {
 
-        String[] extensions={".mp4",".mkv",".avi",".3gp",".m4p",".webm",".gif",".gifv",".amv",".m4v"};
+        String[] extensions={".mp4",".mkv",".avi",".3gp",".m4p",".webm",".gif",".gifv",".amv",".m4v","mov","wmv","flv",
+                             ".MP4",".MKV",".AVI",".3GP",".M4P",".WEBM",".GIF",".GIFV",".AMV",".M4V","MOV","WMV","FLV",
+                            };
         for (String x: extensions){
             if(path.endsWith(x))
                 return true;
